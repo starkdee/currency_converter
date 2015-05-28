@@ -115,5 +115,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
 #Open Exchange Rates API app id
 APP_ID = 'a5ee8f1a637849d0a8c209e324e4becb'

@@ -28,6 +28,7 @@ def update_currency_data():
                 rate.rate = c_rates[currency.code]
                 rate.save()
 
+#makes http request and gets actual names of currencies
 def get_currency_names():
     try:
         r = requests.get('http://openexchangerates.org/api/currencies.json')
@@ -39,6 +40,7 @@ def get_currency_names():
     except Exception, e:
         return None
 
+#makes http request and gets actual rates of currencies
 def get_currency_rates():
     try:
         payload = {'app_id': settings.APP_ID}

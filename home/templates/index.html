@@ -1,0 +1,40 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Stark's Currency converter</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<header class="col-lg-12" id="header">
+			<div id="logo">
+				<span>Stark's Converter</h2>
+			</div>
+		</header>
+		<div class="col-lg-8 col-lg-offset-2 text-center" id="content">
+			<form class="form-inline" action="">
+				<input type="text" class="form-input" name="" id="data-input">
+				<input type="submit" class="btn btn-success form-input" id="data-submit" value="Convert">
+				<p class="help-block text-left">Example: 500 usd to euro</p>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+<div class="row">
+	<div class="col-lg-12" id="creator">
+		<span>Created by Dmitry Chernyshov, 2015</span>
+	</div>
+</div>
+</div>
+</body>
+</html>
