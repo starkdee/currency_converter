@@ -14,8 +14,6 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 import djcelery
 
-djcelery.setup_loader()
-BROKER_URL = 'django://'
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -45,6 +43,9 @@ INSTALLED_APPS = (
     'kombu.transport.django',
     'home',
 )
+
+djcelery.setup_loader()
+BROKER_URL = 'django://'
 
 CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
 
@@ -86,7 +87,7 @@ WSGI_APPLICATION = 'converter.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'converterdb',
+        'NAME': 'ratesdb',
         'USER': 'dmitry',
         'PASSWORD': 'cwappdb',
         'HOST': '127.0.0.1',
@@ -113,3 +114,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#Open Exchange Rates API app id
+APP_ID = 'a5ee8f1a637849d0a8c209e324e4becb'
