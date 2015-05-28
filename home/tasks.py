@@ -15,18 +15,12 @@ def update_currency_data():
         for code in c_names:
             currency, c_created = get_currency(code, c_names[code])
             print '%s - %s' % (code, c_names[code])
-            
-            if c_created:
-                currency.save()
 
-            rate, r_created = get_rate(currency, c_rates[currency.code])
+            rate = get_rate(currency, c_rates[currency.code])
             print '%s - %s' % (currency, c_rates[currency.code])
-
-            if r_created:
-                    rate.save()
-            else:
-                rate.rate = c_rates[currency.code]
-                rate.save()
+            
+            rate.rate = c_rates[currency.code]
+            rate.save()
 
 #makes http request and gets actual names of currencies
 def get_currency_names():
@@ -58,5 +52,9 @@ def get_currency(code, full_name):
     return currency
 
 def get_rate(currency, rate):
-    rate = Rate.objects.get_or_create(currency=currency, rate=rate)
+    try:
+        rate = Rate.objects.get(currency=currency)
+    except Rate.DoesNotExist:
+        rate = Rate(currency=currency)
+
     return rate
