@@ -12,22 +12,42 @@ body {
   margin-top: 200px; }
 
 .form-input {
+  background: rgba(0, 0, 0, 0.3);
+  color: white !important;
+  font-size: 20px;
+  border: 0px;
+  padding: 0px 10px;
   height: 40px;
+  margin-left: -4px;
   outline: none;
   box-shadow: none;
   border-radius: 0px; }
 
-#data-input {
-  background: rgba(0, 0, 0, 0.3);
-  color: white;
-  font-size: 20px;
-  border: 0px;
-  width: 84.1%;
-  padding: 0px 10px; }
+input::-webkit-input-placeholder {
+  color: white; }
+
+#amount {
+  width: 38.3%; }
+
+#cur-from, #cur-to {
+  text-align: center;
+  width: 22.7%; }
+
+#to {
+  width: 10%;
+  padding: 9px; }
 
 #data-submit {
+  width: 11%;
+  height: 40px;
+  margin-left: -4px;
   margin-top: -6px;
-  width: 15%; }
+  border-radius: 0px; }
+
+.ui-autocomplete {
+  max-height: 200px;
+  overflow-y: scroll;
+  overflow-x: hidden; }
 
 #creator {
   margin: 15px;

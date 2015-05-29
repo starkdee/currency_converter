@@ -8,7 +8,13 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+	<link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}">
+
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="{% static 'js/jquery-ui.min.js' %}"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+	<script src="{% static 'js/script.js' %}"></script>
 </head>
 <body>
 
@@ -20,11 +26,14 @@
 			</div>
 		</header>
 		<div class="col-lg-8 col-lg-offset-2 text-center" id="content">
-			<form class="form-inline" action="">
-				<input type="text" class="form-input" name="" id="data-input">
-				<input type="submit" class="btn btn-success form-input" id="data-submit" value="Convert">
-				<p class="help-block text-left">Example: 500 usd to euro</p>
-			</form>
+			
+			<input type="text" class="form-input" name="" placeholder="Amount" id="amount">
+			<input type="text" class="form-input" name="" id="cur-from">
+			<span class="form-input" id="to">to</span>
+			<input type="text" class="form-input" name="" id="cur-to">
+			<button class="btn btn-success" id="data-submit">Convert</button>
+			<p class="help-block text-left">Example: 500 usd to euro</p>
+
 		</div>
 	</div>
 </div>
