@@ -1,1 +1,3 @@
 *.pyc
+/static/js/jquery-ui.min.js
+/static/css/jquery-ui.min.css
