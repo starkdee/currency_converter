@@ -1,2 +1,7 @@
-{{ result }}
-{{ error }}
+<div id="result-panel" class="panel panel-default">
+	{% if error %}
+		<p class="danger">{{ error }}</p>
+	{% else %}
+		<p class="success">{{ currency }}: {{ result }}</p>
+	{% endif %}
+</div>

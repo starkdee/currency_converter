@@ -48,5 +48,5 @@ var fillAutocomplete = function (data, textStatus, jqXHR){
 };
 
 var showResult = function (data, textStatus, jqXHR){
-	console.log(data);
+	$('#result-block').html(data);
 };

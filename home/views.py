@@ -18,10 +18,10 @@ def index(request):
 def result(request, amount, from_code, to_code, content_type):
     print amount, from_code, to_code, content_type
 
-    result, error = calculate_amount(amount, from_code, to_code)
+    result, currency, error = calculate_amount(amount, from_code, to_code)
 
     if content_type.lower() == 'html':
-        return render(request, 'result.html', {'result': result, 'error': error})
+        return render(request, 'result.html', {'result': result, 'currency': currency, 'error': error})
 
     elif content_type.lower() == 'json':
         raw_data = {'success': True}

@@ -5,12 +5,14 @@ def calculate_amount(amount, from_code, to_code):
     print amount, from_code, to_code
     error = []
     result = 0
+    to_currency = ''
     try:
         amount = float(amount)
         
         try:
             from_rate = Rate.objects.get(currency__code=from_code)
             to_rate = Rate.objects.get(currency__code=to_code)
+            to_currency = to_rate.currency.full_name
         except Exception, e:
             error = 'Please, enter correct currencies'
 
@@ -27,4 +29,4 @@ def calculate_amount(amount, from_code, to_code):
     except ValueError:
         error = 'Amount isn\'t a number'
     finally:
-        return (round(result, 2), error)
+        return (round(result, 2), to_currency, error)
