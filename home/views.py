@@ -6,12 +6,9 @@ import json
 from home.calculate import calculate_amount
 
 from home.models import Currency, Rate
-from home.forms import CurrencyForm
-
 
 
 def index(request):
-    c_form = CurrencyForm()
 
     return render(request, 'index.html', {'c_form': c_form})
 
