@@ -30,15 +30,18 @@ var getCurrencyNames = function (){
 
 var getCalculationResult = function (){
 	var amount = $('#amount').val();
+	if (amount == ''){
+		amount = 'AMT';
+	}
 
 	var cur_from = $('#cur-from').val();
 	if (cur_from == ''){
-		var cur_from = 'CUR1';
+		cur_from = 'CUR1';
 	}
 
 	var cur_to = $('#cur-to').val();
 	if (cur_to == ''){
-		var cur_to = 'CUR2';
+		cur_to = 'CUR2';
 	}
 
 	var requestUrl = '/' + amount + '/' + cur_from + '/to/' + cur_to + '/in/' + 'html';
