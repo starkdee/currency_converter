@@ -10,7 +10,7 @@ from home.models import Currency, Rate
 
 def index(request):
 
-    return render(request, 'index.html', {'c_form': c_form})
+    return render(request, 'index.html', {})
 
 def result(request, amount, from_code, to_code, content_type):
     print amount, from_code, to_code, content_type
