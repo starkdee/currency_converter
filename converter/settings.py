@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'r0181^77(^vlv8(lw4gi*6+3%xg&9p5xu4x0^fz354ax!yo7&_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 
@@ -114,7 +114,7 @@ CACHES = {
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Allow all host headers
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['starkconverter.herokuapp.com']
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
