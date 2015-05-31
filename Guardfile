@@ -27,4 +27,4 @@ guard 'livereload' do
   watch(%r{.+\.(css|js|html|sass|svg)})
 end
 
-guard 'sass', :input => 'static/sass', :output => 'static/css'
+guard 'sass', :input => 'converter/static/sass', :output => 'converter/static/css'

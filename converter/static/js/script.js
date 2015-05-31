@@ -6,6 +6,17 @@ $(document).ready(function (){
 		getCalculationResult();
 	});
     
+    $(document).keypress(function (event){
+    	if (event.which == 13){
+    		$('#data-submit').click();
+    	}
+    })
+
+    $('.currency').click(function (){
+    	$(this).val('');
+    });
+
+
 });
 
 var getCurrencyNames = function (){
@@ -20,12 +31,15 @@ var getCurrencyNames = function (){
 var getCalculationResult = function (){
 	var amount = $('#amount').val();
 
-	if (!isNaN(amount) && amount.indexOf('.') == -1){
-		amount += '.00';
+	var cur_from = $('#cur-from').val();
+	if (cur_from == ''){
+		var cur_from = 'CUR1';
 	}
 
-	var cur_from = $('#cur-from').val();
 	var cur_to = $('#cur-to').val();
+	if (cur_to == ''){
+		var cur_to = 'CUR2';
+	}
 
 	var requestUrl = '/' + amount + '/' + cur_from + '/to/' + cur_to + '/in/' + 'html';
 	console.log(requestUrl);

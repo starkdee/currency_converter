@@ -27,14 +27,28 @@
 		</header>
 		<div class="col-lg-8 col-lg-offset-2 text-center" id="content">
 			
-			<input type="text" class="form-input" name="" placeholder="Amount" id="amount">
-			<input type="text" class="form-input" name="" id="cur-from">
-			<span class="form-input" id="to">to</span>
-			<input type="text" class="form-input" name="" id="cur-to">
-			<button class="btn btn-success" id="data-submit">Convert</button>
-			<p class="help-block text-left">Example: 800 USD to EUR</p>
+			<table border="0">
+				<tr>
+					<td><input type="text" class="form-input" placeholder="Amount" id="amount"></td>
+					<td><input type="text" class="form-input currency" placeholder="Currency" id="cur-from"></td>
+					<td><input class="form-input" type="text" placeholder="to" disabled></td>
+					<td><input type="text" class="form-input currency" placeholder="Currency" id="cur-to"></td>
+					<td><button class="btn btn-success" id="data-submit">Convert</button></td>
+				</tr>
+				<tr>
+					<td>
+						<p class="help-block text-left">Example: 800 USD to EUR</p>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="5">
+						<div id="result-block"></div>
+					</td>
+				</tr>
+			</table>
+			
 
-			<div id="result-block"></div>
+			
 		</div>
 
 	</div>
