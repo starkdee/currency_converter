@@ -97,20 +97,16 @@ DATABASES = {
 }
 
 # Parse database configuration from $DATABASE_URL
-cache_location = '/home/dmitry/dev/currency_env/converter/app_cache'
-
 if not os.environ.get("HOME") == '/home/dmitry':
     # Parse database configuration from $DATABASE_URL
     import dj_database_url
     DATABASES['default'] = dj_database_url.config()
-    #set cache location
-    cache_location = '/app/app_cache'
 
 
 CACHES = {
     'default': {
-        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
-        'LOCATION': cache_location,
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'app_cache',
     }
 }
 
