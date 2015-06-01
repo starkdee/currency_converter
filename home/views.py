@@ -38,6 +38,9 @@ def result(request, amount, from_code, to_code, content_type):
             return HttpResponse(error)
         else:
             return HttpResponse(result)
+    else: 
+        error = 'Please, enter correct output format (json/text/html)'
+        return HttpResponse(error)
 
 def get_currency_names(request):
     currencies = Currency.objects.all()
